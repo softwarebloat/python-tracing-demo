@@ -30,6 +30,8 @@ services:
     build: .
     ports:
       - "8080:8080"
+    environment:
+      - OTEL_PYTHON_LOG_CORRELATION=true
     logging:
       driver: loki
       options:

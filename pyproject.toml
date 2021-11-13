@@ -8,6 +8,11 @@ authors = ["softwarebloat"]
 python = "^3.9"
 fastapi = "^0.70.0"
 httpx = "0.18.2"
+opentelemetry-api = "^1.7.1"
+opentelemetry-sdk = "^1.7.1"
+opentelemetry-instrumentation-fastapi = "^0.26b1"
+opentelemetry-instrumentation-logging = "^0.26b1"
+opentelemetry-exporter-otlp = "^1.7.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

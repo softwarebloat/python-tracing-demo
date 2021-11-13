@@ -15,3 +15,9 @@ datasources:
     version: 1
     editable: false
     isDefault: true
+    jsonData:
+      derivedFields:
+        - datasourceUid: tempo
+          matcherRegex: trace_id=(\w+)
+          name: TraceID
+          url: "$${__value.raw}"
