@@ -2,7 +2,7 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim
 
 RUN apt-get update && apt-get -y install curl
 
-RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python && \
+RUN curl -sSL https://install.python-poetry.org | python && \
           ln -s $HOME/.poetry/bin/poetry /usr/bin/poetry && \
           poetry --version && \
           poetry config virtualenvs.create false
