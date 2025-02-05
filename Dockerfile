@@ -1,5 +1,7 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim
 
+ENV PATH="/root/.local/bin:$PATH"
+
 RUN apt-get update && apt-get -y install curl
 
 RUN curl -sSL https://install.python-poetry.org | python && \
@@ -10,7 +12,7 @@ RUN curl -sSL https://install.python-poetry.org | python && \
 WORKDIR /app
 COPY poetry.lock pyproject.toml ./
 
-RUN poetry install --no-dev --no-interaction
+RUN poetry install --only main --no-interaction --no-root
 
 COPY python_tracing_demo/ ./
 
